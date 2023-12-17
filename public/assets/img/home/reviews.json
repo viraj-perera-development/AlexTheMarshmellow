@@ -1,0 +1,30 @@
+[
+    {
+     "id": "1",
+     "image": "isabel.jpg",
+     "name": "Isabel Segarra",
+     "stars": 5,
+     "text": "La migliore scuola di formazione con un eccellente TEAM ben formato e molto professionale."
+    },
+    {
+     "id": "2",
+     "image": "roberto.jpg",
+     "name": "Roberto Emanuel",
+     "stars": 4,
+     "text": "Ho appena frequentato il corso DNA del Leader e ne sono rimasto entusiasta: grande energia, professionalità, disponibilità....concetti interessanti da applicare in ogni campo della tua vita! Il prodotto non ha eguali ed il metodo è..'vincente'!!! 4Change....4Ever!!!"
+    },
+    {
+     "id": "3",
+     "image": "francesco.png",
+     "name": "Federico Fracassi",
+     "stars": 3,
+     "text": "Bellissima opportunità per una crescita personale e professionale, fatta con persone speciali dove amicizia e formazione sono veramente al top. Complimenti"
+    },
+    {
+     "id": "4",
+     "image": "sebastiano.jpg",
+     "name": "Sebastiano Salamone",
+     "stars": 4,
+     "text": "Un'esperienza unica e irripetibile, entusiasmante; un percorso di vita che conduce alla libertà finanziaria."
+    }
+   ]
