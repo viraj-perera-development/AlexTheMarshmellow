@@ -1,54 +1,61 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import img1 from '../assets/img1.png';
 import img2 from '../assets/img2.png';
 import img3 from '../assets/img3.png';
-import image1 from '../assets/img4.png';
-import image2 from '../assets/img5.png';
-import image3 from '../assets/img6.png';
+import image1 from '../assets/image1.png';
+import image2 from '../assets/image2.png';
+import image3 from '../assets/image3.png';
 
 function Home() {
-  const [counterLeft, setCounterLeft] = useState(4);
-  const [counterRight, setCounterRight] = useState(0);
+  const [currentGoodIndex, setCurrentGoodIndex] = useState(null);
+  const [currentBedIndex, setCurrentBedIndex] = useState(null);
 
-  const bedReaction = [img1, img2, img3];
-  const goodReaction = [image1, image2, image3];
+  const imagesGood = [img3, img1, img2];
+  const imagesBed = [image3, image1, image2];
 
-  const handleFlip = (direction) => {
-    if (direction === 'left') {
-      setCounterLeft((counterLeft) => (counterLeft + 1) % bedReaction.length);
-      console.log(bedReaction[counterLeft]);
-    } else if (direction === 'right') {
-      setCounterRight((prevCounter) => {
-        const nextCounter = prevCounter + 1;
-        return nextCounter < goodReaction.length ? nextCounter : prevCounter;
-      });
-      console.log(goodReaction[counterRight]);
-    }
-  };  
-  
+  const handleGoodButtonClick = () => {
+    setCurrentBedIndex(null);
+    setCurrentGoodIndex((prevIndex) => (prevIndex + 1) % imagesGood.length);  
+  };
+
+  const handleBedButtonClick = () => {
+    setCurrentGoodIndex(null);
+    setCurrentBedIndex((prevIndex) => (prevIndex + 1) % imagesBed.length);
+  };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="flip-image-container text-center">
-        <h1 className="title mb-4">Do you like Marshmallow?</h1>
-        <div className={`image-container ${'flipped'}`}>
-          <div className="image-front">
-            <img src={bedReaction[counterLeft]} className="img-fluid w-75" alt="Front Image" />
-          </div>
-          <div className="image-back">
-            <img src={goodReaction[counterRight]} className="img-fluid w-75" alt="Back Image" />
+    <div className="container-fluid d-flex flex-column justify-content-center align-items-center" style={{ height: '85vh' }}>
+      <div className="container my-auto">
+
+        <div className="row d-flex justify-content-center align-items-center text-center flex-grow-1">
+          <div className="col">
+            <h1 style={{"font-size":"2.6rem"}}>Do you like marshmallow?</h1>
           </div>
         </div>
-        <div className="buttons-container mt-4">
-          <button className="btn btn-primary mr-2" onClick={() => handleFlip('left')}>
-            YES
-          </button>
-          <button className="btn btn-primary" onClick={() => handleFlip('right')}>
-            NO
-          </button>
+        <div className="row d-flex justify-content-center align-items-center flex-grow-1" style={{ height: '50vh' }}>
+          {currentGoodIndex !== null && (
+            <>
+              <img src={imagesGood[currentGoodIndex]} className="img-fluid" alt={`Good Image ${currentGoodIndex + 1}`} />
+            </>
+          )}
+          {currentBedIndex !== null && (
+            <>
+              <img src={imagesBed[currentBedIndex]} className="img-fluid" alt={`Bed Image ${currentBedIndex + 1}`} />
+            </>
+          )}
         </div>
-        <p>Counter (Left): {counterLeft}</p>
-        <p>Counter (Right): {counterRight}</p>
+        <div className="row d-flex justify-content-center align-items-center">
+          <div className="col-6 text-center">
+            <button className="rounded-pill shadow text-uppercase px-4 fs-1 btn bg-info text-light bg-opacity-50" onClick={handleGoodButtonClick}>
+              Yes ❤️
+            </button>
+          </div>
+          <div className="col-6 text-center">
+            <button className="rounded-pill shadow text-uppercase px-4 fs-1 btn bg-danger bg-opacity-50 text-light" onClick={handleBedButtonClick}>
+              No 💔
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

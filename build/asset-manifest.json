@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bb53617a.css",
+    "main.js": "/static/js/main.6eca0c64.js",
+    "static/media/image3.png": "/static/media/image3.fc14d800cde7c0fc77d0.png",
+    "static/media/image1.png": "/static/media/image1.5d6c31da948c07de1704.png",
+    "static/media/img3.png": "/static/media/img3.5092a6961415e5d6aa41.png",
+    "static/media/image2.png": "/static/media/image2.b44508cfdf9721accc41.png",
+    "static/media/img2.png": "/static/media/img2.a8cfd36728a9fcdded71.png",
+    "static/media/img1.png": "/static/media/img1.62f49e1476663ce83437.png",
+    "static/media/ChewyBubble-owJJB.ttf": "/static/media/ChewyBubble-owJJB.260509a53c8c16f16a4a.ttf",
+    "index.html": "/index.html",
+    "main.bb53617a.css.map": "/static/css/main.bb53617a.css.map",
+    "main.6eca0c64.js.map": "/static/js/main.6eca0c64.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bb53617a.css",
+    "static/js/main.6eca0c64.js"
+  ]
+}
